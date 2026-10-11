@@ -1,0 +1,59 @@
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_auth_required_and_unknown_credentials_rejected (tests.test_api.ApiTests.test_auth_required_and_unknown_credentials_rejected) ... ok
+test_body_cannot_override_tenant_identity (tests.test_api.ApiTests.test_body_cannot_override_tenant_identity) ... ok
+test_config_rejects_invalid_values (tests.test_api.ApiTests.test_config_rejects_invalid_values) ... ok
+test_configuration_requires_etag_and_rejects_stale_writes (tests.test_api.ApiTests.test_configuration_requires_etag_and_rejects_stale_writes) ... ok
+test_dashboard_and_local_assets_are_served (tests.test_api.ApiTests.test_dashboard_and_local_assets_are_served) ... ok
+test_equivalent_timestamps_normalize_before_idempotency_hash (tests.test_api.ApiTests.test_equivalent_timestamps_normalize_before_idempotency_hash) ... ok
+test_health_and_security_headers (tests.test_api.ApiTests.test_health_and_security_headers) ... ok
+test_manual_dispatch_is_tenant_scoped (tests.test_api.ApiTests.test_manual_dispatch_is_tenant_scoped) ... ok
+test_missing_or_invalid_idempotency_key_rejected (tests.test_api.ApiTests.test_missing_or_invalid_idempotency_key_rejected) ... ok
+test_naive_timestamp_rejected (tests.test_api.ApiTests.test_naive_timestamp_rejected) ... ok
+test_new_duplicate_and_conflicting_event_statuses (tests.test_api.ApiTests.test_new_duplicate_and_conflicting_event_statuses) ... ok
+test_pagination_bounds_and_cursor_scope (tests.test_api.ApiTests.test_pagination_bounds_and_cursor_scope) ... ok
+test_payload_size_limit (tests.test_api.ApiTests.test_payload_size_limit) ... ok
+test_request_size_limit_with_chunked_body (tests.test_api.ApiTests.test_request_size_limit_with_chunked_body) ... ok
+test_tenant_cannot_read_other_tenant_event (tests.test_api.ApiTests.test_tenant_cannot_read_other_tenant_event) ... ok
+test_concurrent_dispatchers_preserve_two_tenant_event_conservation (tests.test_process.ProcessTests.test_concurrent_dispatchers_preserve_two_tenant_event_conservation) ... ok
+test_real_process_exit_after_receipt_recovers_without_duplicate_effect (tests.test_process.ProcessTests.test_real_process_exit_after_receipt_recovers_without_duplicate_effect) ... ok
+test_correctly_signed_cursor_still_checks_sqlite_integer_bounds (tests.test_review.ReviewApiTests.test_correctly_signed_cursor_still_checks_sqlite_integer_bounds) ... ok
+test_nonfinite_payload_is_a_serializable_client_error (tests.test_review.ReviewApiTests.test_nonfinite_payload_is_a_serializable_client_error) ... ok
+test_oversized_if_match_is_a_client_error_without_mutation (tests.test_review.ReviewApiTests.test_oversized_if_match_is_a_client_error_without_mutation) ... ok
+test_surrogate_label_does_not_poison_persisted_config_reads (tests.test_review.ReviewApiTests.test_surrogate_label_does_not_poison_persisted_config_reads) ... ok
+test_surrogate_mapping_key_is_rejected_before_persistence (tests.test_review.ReviewApiTests.test_surrogate_mapping_key_is_rejected_before_persistence) ... ok
+test_surrogate_payload_does_not_poison_persisted_event_reads (tests.test_review.ReviewApiTests.test_surrogate_payload_does_not_poison_persisted_event_reads) ... ok
+test_utc_normalization_overflow_is_a_client_error (tests.test_review.ReviewApiTests.test_utc_normalization_overflow_is_a_client_error) ... ok
+test_claim_lease_duration_starts_after_obtaining_writer_lock (tests.test_review.ReviewStoreTests.test_claim_lease_duration_starts_after_obtaining_writer_lock) ... ok
+test_composite_foreign_key_blocks_cross_tenant_receipt (tests.test_review.ReviewStoreTests.test_composite_foreign_key_blocks_cross_tenant_receipt) ... ok
+test_failed_attempt_log_rolls_back_entire_ack (tests.test_review.ReviewStoreTests.test_failed_attempt_log_rolls_back_entire_ack) ... ok
+test_finish_rechecks_expiry_after_obtaining_writer_lock (tests.test_review.ReviewStoreTests.test_finish_rechecks_expiry_after_obtaining_writer_lock) ... ok
+test_ack_at_lease_boundary_is_rejected_even_without_reclaim (tests.test_store.StoreTests.test_ack_at_lease_boundary_is_rejected_even_without_reclaim) ... ok
+test_arbitrary_receiver_errors_are_sanitized (tests.test_store.StoreTests.test_arbitrary_receiver_errors_are_sanitized) ... ok
+test_concurrent_claims_are_distinct (tests.test_store.StoreTests.test_concurrent_claims_are_distinct) ... ok
+test_concurrent_conflicting_ingestion_has_one_winner (tests.test_store.StoreTests.test_concurrent_conflicting_ingestion_has_one_winner) ... ok
+test_concurrent_duplicate_ingestion_creates_one_event (tests.test_store.StoreTests.test_concurrent_duplicate_ingestion_creates_one_event) ... ok
+test_config_compare_and_swap_has_one_concurrent_winner (tests.test_store.StoreTests.test_config_compare_and_swap_has_one_concurrent_winner) ... ok
+test_config_version_is_captured_at_ingestion (tests.test_store.StoreTests.test_config_version_is_captured_at_ingestion) ... ok
+test_crash_after_receipt_before_ack_is_deduplicated_on_recovery (tests.test_store.StoreTests.test_crash_after_receipt_before_ack_is_deduplicated_on_recovery) ... ok
+test_cursor_rejects_other_tenant_and_tampering (tests.test_store.StoreTests.test_cursor_rejects_other_tenant_and_tampering) ... ok
+test_cursor_snapshot_excludes_later_inserts (tests.test_store.StoreTests.test_cursor_snapshot_excludes_later_inserts) ... ok
+test_duplicate_changed_payload_conflicts (tests.test_store.StoreTests.test_duplicate_changed_payload_conflicts) ... ok
+test_duplicate_returns_same_event_and_canonical_key_order (tests.test_store.StoreTests.test_duplicate_returns_same_event_and_canonical_key_order) ... ok
+test_event_and_outbox_commit_together (tests.test_store.StoreTests.test_event_and_outbox_commit_together) ... ok
+test_expired_lease_is_reclaimed_and_old_ack_is_fenced (tests.test_store.StoreTests.test_expired_lease_is_reclaimed_and_old_ack_is_fenced) ... ok
+test_outbox_insert_failure_rolls_back_event (tests.test_store.StoreTests.test_outbox_insert_failure_rolls_back_event) ... ok
+test_poison_event_stops_after_three_attempts (tests.test_store.StoreTests.test_poison_event_stops_after_three_attempts) ... ok
+test_receiver_runs_outside_database_transaction (tests.test_store.StoreTests.test_receiver_runs_outside_database_transaction) ... ok
+test_repeated_worker_crashes_exhaust_budget_and_record_unknown_outcome (tests.test_store.StoreTests.test_repeated_worker_crashes_exhaust_budget_and_record_unknown_outcome) ... ok
+test_retry_schedule_survives_database_reopen (tests.test_store.StoreTests.test_retry_schedule_survives_database_reopen) ... ok
+test_same_key_in_other_tenant_is_independent (tests.test_store.StoreTests.test_same_key_in_other_tenant_is_independent) ... ok
+test_transient_failure_retries_after_backoff (tests.test_store.StoreTests.test_transient_failure_retries_after_backoff) ... ok
+test_unexpired_lease_cannot_be_claimed (tests.test_store.StoreTests.test_unexpired_lease_cannot_be_claimed) ... ok
+test_unicode_hash_format_remains_stable (tests.test_store.StoreTests.test_unicode_hash_format_remains_stable) ... ok
+test_worker_respects_tenant_scope (tests.test_store.StoreTests.test_worker_respects_tenant_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 52 tests in 1.055s
+
+OK

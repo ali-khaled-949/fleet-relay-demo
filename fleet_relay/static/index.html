@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c151f">
+  <meta name="description" content="Fleet Relay: a synthetic portfolio event-delivery prototype. Inspect atomic acceptance, leased delivery, and idempotent receipts.">
+  <title>Fleet Relay · Delivery console</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%236ee7c8'/%3E%3Cpath d='M12 28V12h17v4H16v3h10v4H16v5z' fill='%230c151f'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 5h13M8 12h13M8 19h13M3 5h.01M3 12h.01M3 19h.01"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 3v7m0 4v7M12 3v12m0 4v2M20 3v2m0 4v12M1 10h6m2 5h6m2-10h6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M6.1 6.1a8 8 0 0 1 13.3 3M4.6 14.9a8 8 0 0 0 13.3 3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 5v9l9 5 9-5V8M12 13v9M7.5 5.5l9 5"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 12h5l3-8 4 16 3-8h5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m10.3 4-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3l-8-14a2 2 0 0 0-3.4 0ZM12 9v4m0 4h.01"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></symbol>
+  </defs></svg>
+
+  <aside class="sidebar" aria-label="Main navigation">
+    <a href="#overview" class="brand" aria-label="Fleet Relay overview"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>fleet<span class="brand-light">relay</span><small>DELIVERY INFRASTRUCTURE</small></span></a>
+    <div class="workspace-label">WORKSPACE <span>01</span></div>
+    <nav>
+      <a class="nav-link active" href="#overview" aria-current="page"><svg class="icon"><use href="#i-grid"/></svg>Overview<span class="nav-marker"></span></a>
+      <a class="nav-link" href="#events"><svg class="icon"><use href="#i-list"/></svg>Event ledger</a>
+      <a class="nav-link" href="#configuration"><svg class="icon"><use href="#i-sliders"/></svg>Configuration</a>
+    </nav>
+    <div class="sidebar-note"><div class="note-icon"><svg class="icon"><use href="#i-shield"/></svg></div><strong>Small surface.<br>Explicit guarantees.</strong><p>Atomic acceptance.<br>At-least-once delivery.<br>Idempotent receipts.</p><a href="#contract">Explore the contract <span aria-hidden="true">↗</span></a></div>
+    <div class="sidebar-footer"><span class="status-dot"></span> SQLite · single host <span class="version">v0.1</span></div>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb">Workspace <span>/</span> <strong>Delivery console</strong></div>
+      <div class="topbar-right"><span class="demo-badge"><span class="status-dot"></span> SYNTHETIC DATA</span><label class="tenant-picker"><span class="sr-only">Choose tenant</span><span class="tenant-avatar" aria-hidden="true" id="tenant-avatar">N</span><select id="tenant-select"><option value="north">Northstar Lab</option><option value="south">Solstice Lab</option></select></label></div>
+    </header>
+    <main id="main" tabindex="-1">
+      <section id="overview" class="overview section-anchor" aria-labelledby="page-title">
+        <div class="page-heading"><div><div class="eyebrow"><span></span> EVENT DELIVERY, IN FOCUS</div><h1 id="page-title">Every signal has a story.</h1><p class="page-description">Follow it from acceptance to acknowledgement.</p></div><div class="heading-actions"><span id="sync-status" class="sync-status">Connecting to the local API</span><button class="button button-quiet" id="refresh-button" type="button"><svg class="icon"><use href="#i-refresh"/></svg><span>Refresh</span></button></div></div>
+        <div id="connection-alert" class="notice notice-error" role="alert" hidden><svg class="icon"><use href="#i-alert"/></svg><div><strong>Some data couldn’t be loaded. Previously loaded values may be stale.</strong><p id="connection-detail"></p></div><button class="text-button" id="retry-connection" type="button">Try again</button></div>
+        <div class="metrics" aria-label="Tenant delivery summary" aria-busy="true" id="metrics">
+          <article class="metric"><div class="metric-label">Accepted events <svg class="icon"><use href="#i-box"/></svg></div><div class="metric-value" id="metric-accepted">—</div><div class="metric-foot">Persisted with an outbox record</div></article>
+          <article class="metric"><div class="metric-label">Awaiting delivery <svg class="icon"><use href="#i-clock"/></svg></div><div class="metric-value" id="metric-awaiting">—</div><div class="metric-foot"><span id="metric-pending">—</span> pending <span class="foot-separator">/</span> <span id="metric-inflight">—</span> in flight</div></article>
+          <article class="metric metric-highlight"><div class="metric-label">Unique receipts <svg class="icon"><use href="#i-shield"/></svg></div><div class="metric-value" id="metric-receipts">—</div><div class="metric-foot"><span class="status-dot"></span> Sink-side deduplication</div></article>
+          <article class="metric"><div class="metric-label">Dead letters <svg class="icon"><use href="#i-alert"/></svg></div><div class="metric-value" id="metric-dead">—</div><div class="metric-foot">Exhausted delivery attempts</div></article>
+        </div>
+
+        <section class="pipeline-card" id="contract" aria-labelledby="pipeline-title"><div class="panel-heading"><div><span class="eyebrow muted">THE DELIVERY CONTRACT</span><h2 id="pipeline-title">Three steps. One visible trail.</h2></div><span class="outline-badge">AT-LEAST-ONCE</span></div><div class="pipeline">
+          <div class="pipeline-step"><div class="step-symbol"><svg class="icon"><use href="#i-box"/></svg></div><div><span class="step-number">01 / ACCEPT</span><h3>One atomic write</h3><p>The event and its outbox entry commit together. Replayed requests reuse the event.</p></div></div><div class="pipeline-connector" aria-hidden="true"><span></span><svg class="icon"><use href="#i-arrow"/></svg></div>
+          <div class="pipeline-step"><div class="step-symbol"><svg class="icon"><use href="#i-pulse"/></svg></div><div><span class="step-number">02 / DELIVER</span><h3>Leased, then retried</h3><p>A worker claims a time-bound lease. Transient failures return with backoff.</p></div></div><div class="pipeline-connector" aria-hidden="true"><span></span><svg class="icon"><use href="#i-arrow"/></svg></div>
+          <div class="pipeline-step"><div class="step-symbol"><svg class="icon"><use href="#i-check"/></svg></div><div><span class="step-number">03 / ACKNOWLEDGE</span><h3>One durable receipt</h3><p>The synthetic sink deduplicates by event. Multiple attempts can mean one receipt.</p></div></div>
+        </div><div class="pipeline-footer"><span><span class="status-dot"></span> Explicit boundary</span><p>SQLite single-host prototype. Delivery may repeat; the demo sink records each event once.</p></div></section>
+      </section>
+
+      <div class="workbench-grid">
+        <section class="panel event-panel section-anchor" id="events" aria-labelledby="events-title">
+          <div class="panel-heading"><div><span class="eyebrow muted">TENANT-SCOPED STREAM</span><h2 id="events-title">Event ledger <span class="count-pill" id="event-total">—</span></h2></div><span class="live-label" id="ledger-label">Loading</span></div>
+          <div class="event-toolbar"><div><strong>Put the contract to work</strong><p>Three synthetic signals: normal, retry once, and poison.</p></div><button class="button button-primary" id="ingest-button" type="button"><svg class="icon"><use href="#i-plus"/></svg><span>Ingest sample batch</span></button></div>
+          <div class="batch-actions"><span class="mini-label"><svg class="icon"><use href="#i-code"/></svg> Synthetic fault injection</span><button class="text-button" id="replay-button" type="button" disabled>Replay last batch <span aria-hidden="true">↻</span></button></div>
+          <div class="table-scroll" id="events-region" aria-busy="true"><table><caption class="sr-only">Events and their current delivery states. Open an event to see its payload.</caption><thead><tr><th scope="col">Event / device</th><th scope="col">Signal</th><th scope="col">Delivery</th><th scope="col" class="numeric">Tries</th><th scope="col" class="time-column">Accepted</th><th scope="col"><span class="sr-only">Details</span></th></tr></thead><tbody id="events-body"></tbody></table><div class="empty-state" id="events-state"><span class="loading-ring" aria-hidden="true"></span><h3>Reading the event ledger</h3><p>Fetching this tenant’s persisted events.</p></div></div>
+          <div class="table-footer"><span id="page-description">Up to 10 events per page</span><div><button class="text-button" id="reset-page" type="button" disabled>Newest</button><button class="button button-small button-quiet" id="next-page" type="button" disabled>Next page <svg class="icon"><use href="#i-arrow"/></svg></button></div></div>
+        </section>
+
+        <aside class="right-column" aria-label="Delivery controls and configuration">
+          <section class="panel dispatch-panel" aria-labelledby="dispatch-title"><div class="panel-heading"><div><span class="eyebrow muted">MANUAL WORKER</span><h2 id="dispatch-title">Move the queue.</h2></div><div class="small-symbol"><svg class="icon"><use href="#i-pulse"/></svg></div></div><p class="panel-description">Claim up to 20 ready deliveries for this tenant and send them to the synthetic sink.</p><div class="dispatch-states"><div><span class="status-dot pending"></span>Pending<strong id="queue-pending">—</strong></div><div><span class="status-dot blue"></span>In flight<strong id="queue-inflight">—</strong></div><div><span class="status-dot"></span>Delivered<strong id="queue-delivered">—</strong></div></div><button class="button button-primary button-wide" id="dispatch-button" type="button"><span>Run dispatch</span><svg class="icon"><use href="#i-arrow"/></svg></button><p class="control-hint" id="dispatch-hint">Retry after 2s, then 4s (backoff capped at 30s). Poison events fail all 3 attempts, then become dead letters.</p><div class="dispatch-result" id="dispatch-result" aria-live="polite" hidden></div></section>
+          <section class="panel config-panel section-anchor" id="configuration" aria-labelledby="config-title"><div class="panel-heading"><div><span class="eyebrow muted">OPTIMISTIC CONCURRENCY</span><h2 id="config-title">Device configuration</h2></div><span class="outline-badge" id="config-version">v—</span></div><form id="config-form"><fieldset id="config-fields" disabled><label class="field-label" for="sample-interval">Sample interval <span>seconds</span></label><div class="interval-input"><input id="sample-interval" name="sample_interval_seconds" type="number" min="5" max="3600" step="1" value="" placeholder="—" required inputmode="numeric"><svg class="icon"><use href="#i-clock"/></svg></div><label class="switch-row"><span><strong>Collection enabled</strong><small>Stored device setting</small></span><input id="collection-enabled" name="enabled" type="checkbox" role="switch"><span class="switch" aria-hidden="true"></span></label><button class="button button-quiet button-wide" id="save-config" type="submit"><span>Save configuration</span><svg class="icon"><use href="#i-check"/></svg></button></fieldset><p class="control-hint" id="config-hint">Loading the current configuration and its ETag.</p></form><div class="config-conflict" id="config-conflict" role="alert" hidden><strong>A newer version is available.</strong><p>Your draft is still here. Load the latest settings before making another edit.</p><button class="text-button" id="reload-config" type="button">Load latest configuration <span aria-hidden="true">↻</span></button></div></section>
+        </aside>
+      </div>
+
+      <section class="panel activity-panel" aria-labelledby="activity-title"><div class="panel-heading"><div><span class="eyebrow muted">WORKER OBSERVABILITY</span><h2 id="activity-title">Delivery attempts</h2></div><span class="muted-note">Most recent · this tenant</span></div><div id="attempts-list" class="attempts-list" aria-busy="true"><div class="activity-empty">Fetching worker activity…</div></div></section>
+      <footer class="page-footer"><span><strong>fleetrelay</strong> <span class="footer-divider">/</span> An event’s path, made visible.</span><span>Portfolio prototype <span class="footer-divider">·</span> Synthetic devices only <span class="footer-divider">·</span> No production credentials</span></footer>
+    </main>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="event-dialog" aria-labelledby="event-dialog-title"><div class="dialog-heading"><div><span class="eyebrow muted">EVENT INSPECTOR</span><h2 id="event-dialog-title">Event details</h2></div><button class="icon-button" id="close-dialog" type="button" aria-label="Close event details"><svg class="icon"><use href="#i-close"/></svg></button></div><div id="event-detail"></div></dialog>
+  <noscript><div class="noscript">Fleet Relay needs JavaScript to read the local API. Enable JavaScript to use the console.</div></noscript>
+</body>
+</html>

@@ -1,0 +1,147 @@
+{
+  "project": "Fleet Relay",
+  "release_date_utc": "2026-10-11",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 94,
+      "sha256": "db9432fde107b50255044d7c3cf978b3bd7a715a2b1f5d95f0825a6daf20c9ed"
+    },
+    {
+      "path": "Makefile",
+      "bytes": 402,
+      "sha256": "80ff6e534d1ac87d1fe5fea729b5d185e7d863120a8edf3909ecdceed71aa08d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12461,
+      "sha256": "4f5b31d76e47953c90948eeb1419b4de4bd50da65271d28789687b29f50489ab"
+    },
+    {
+      "path": "artifacts/test-output.txt",
+      "bytes": 7434,
+      "sha256": "14572db3ab54cc2068ae3cd75425747bd48b4e6921e746657e58c9b92c25bc4d"
+    },
+    {
+      "path": "artifacts/ui-qa-results.json",
+      "bytes": 1090,
+      "sha256": "33d1580d6b70bfa2b768c3cbb7dc4f83d323c15f3b7bb4451cbaf4e66a381c38"
+    },
+    {
+      "path": "artifacts/ui-test-output.txt",
+      "bytes": 892,
+      "sha256": "bc06b2c23eba409c60b13265586bc1a92ba9a9bc980987c0b468dfb47da93389"
+    },
+    {
+      "path": "artifacts/walkthrough.json",
+      "bytes": 4287,
+      "sha256": "9f8719e894a87388e44ddfb44fdb1205f746020696daa2d246e9bdab36f238ee"
+    },
+    {
+      "path": "docs/design-review.md",
+      "bytes": 3143,
+      "sha256": "3ce2764de77a7bb08e7145e067c32788ed439785f41fba6f9e38e4d5e367858c"
+    },
+    {
+      "path": "docs/test-report.md",
+      "bytes": 7017,
+      "sha256": "8698601dc6069c1d0300f186ce118c83950438cb1fa78d3bcbbe922ab40c7260"
+    },
+    {
+      "path": "fleet_relay/__init__.py",
+      "bytes": 101,
+      "sha256": "64eac25afaa919a209f2aa6c3fcd26c7b86389e7a6518ba28a37ca8dc134c65f"
+    },
+    {
+      "path": "fleet_relay/app.py",
+      "bytes": 10167,
+      "sha256": "a2d2eb7182c837106cb261ff6597d642926f1eb591cd3d6fdf136bbc5ff36c2f"
+    },
+    {
+      "path": "fleet_relay/static/app.js",
+      "bytes": 23576,
+      "sha256": "c1d77350d9cac9d26e67286c62369b3397e0bb209b800811898386379335788f"
+    },
+    {
+      "path": "fleet_relay/static/index.html",
+      "bytes": 14592,
+      "sha256": "8e1c20c3ce1defdea49e35a2139dbbde6881e2da60fb2acbd5047d9e1cd61598"
+    },
+    {
+      "path": "fleet_relay/static/styles.css",
+      "bytes": 41357,
+      "sha256": "daf073da645f4694b8d7088c317590ebff1c65dfe8d4f00e57a61872c54ad324"
+    },
+    {
+      "path": "fleet_relay/store.py",
+      "bytes": 16649,
+      "sha256": "799407ef6fdb6837da9798b832f724184ef723e66833ca0610a442eb6524580c"
+    },
+    {
+      "path": "fleet_relay/worker.py",
+      "bytes": 2319,
+      "sha256": "e45fbdde210735b723254e760fa6be625dd2082962cabdc6edb8ce623ef8373c"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 34,
+      "sha256": "934fbb549ab3209320a68f549631f92ffa7dcd1372d15620c148eb5f55bd7735"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 434,
+      "sha256": "838287d2e3f0af52eb60f2cfb51fa2126783225ac2ad1d603401ff7602de30fe"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 50,
+      "sha256": "39516704f128efff14457c828a7acd6bfa6621049f6df1d53f78882cc10b84ac"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/demo.py",
+      "bytes": 4928,
+      "sha256": "830f79024c7b49a122818ce916db6b54e784a4cde194cc2cbba22c8cfda32d47"
+    },
+    {
+      "path": "scripts/ui_api_bridge.py",
+      "bytes": 1459,
+      "sha256": "3da989534969481ca9c4ee0424db6099cfd3169fbd1b4b5828f6924733340fe2"
+    },
+    {
+      "path": "scripts/ui_smoke.js",
+      "bytes": 11071,
+      "sha256": "157744762703661c70a04499ef5c85e23fe9c6a2347f8bcfa3ffcab923f90bc0"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/test_api.py",
+      "bytes": 6619,
+      "sha256": "e0fbe3de99dd0a49021d8fcfc800896d505fb7b52b126d0ab70ca2b2f05f34c8"
+    },
+    {
+      "path": "tests/test_process.py",
+      "bytes": 2603,
+      "sha256": "4c630e2e9edda90521eea1c7d8b1107f9eec6843b98fbc83b12812de22fe5139"
+    },
+    {
+      "path": "tests/test_review.py",
+      "bytes": 7722,
+      "sha256": "2ff7780e8b11e1aad9cf86c9cca8e29006ccb5ed1e561715c9ac3c6447c03e55"
+    },
+    {
+      "path": "tests/test_store.py",
+      "bytes": 11210,
+      "sha256": "e25ba4ff52f66b4ef37fc612e939efb72f2f313e2e86fdaf31fcdfa4a08acc9e"
+    }
+  ],
+  "artifact_kind": "synthetic portfolio prototype"
+}

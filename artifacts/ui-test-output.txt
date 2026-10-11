@@ -1,0 +1,16 @@
+PASS Empty initial tenant uses actual API zeros
+PASS Ingest accepts 3 events and enables replay
+PASS Replay uses same keys and preserves 3 event count
+PASS First dispatch delivers normal and schedules both failures
+PASS Retry recovers and durable receipts increment once
+PASS Poison event becomes dead after three failed attempts
+PASS Event dialog opens with payload and closes
+PASS Configuration writes If-Match and increments version
+PASS Stale ETag conflict retains draft and blocks overwrite
+PASS Reload recovers stale configuration and preserves labels
+PASS Tenant switch clears all prior tenant data and replay state
+PASS Tenant data remains isolated after south ingest
+PASS Cursor pagination and newest reset use real pages
+PASS Read error shows explicit state and refresh recovers
+PASS Repeated clicks during loading do not submit extra batches
+ALL 15 IN-PROCESS UI/API CHECKS PASSED
